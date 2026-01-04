@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Kingstorm Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a1a'/><text x='50' y='70' font-family='Arial' font-size='60' text-anchor='middle' fill='%2300f7ff'>K</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00f7ff;
+            --primary-dark: #00bcd4;
+            --secondary-color: #0a0a1a;
+            --accent-color: #00e5ff;
+            --accent-pink: #ff00ff;
+            --accent-purple: #9d00ff;
+            --accent-green: #00ff9d;
+            --accent-orange: #ff9d00;
+            --text-light: #f0f8ff;
+            --gradient-bg: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            --gradient-tech: linear-gradient(45deg, #00f7ff, #9d00ff, #ff00ff, #ff9d00, #00ff9d);
+            --shadow-glow: 0 0 20px rgba(0, 247, 255, 0.4);
+            --transition: all 0.4s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 247, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(157, 0, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 30% 80%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: pulse 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            box-shadow: 
+                0 0 40px rgba(0, 247, 255, 0.2),
+                inset 0 0 20px rgba(0, 247, 255, 0.1);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-tech);
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: var(--accent-green);
+            margin-bottom: 30px;
+            animation: bounce 2s ease infinite;
+            text-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(240, 248, 255, 0.9);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        .contact-info {
+            background: rgba(0, 247, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid rgba(0, 247, 255, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--accent-orange);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .neon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: var(--transition);
+            box-shadow: var(--shadow-glow);
+            text-decoration: none;
+            margin: 20px 10px;
+            min-width: 200px;
+        }
+
+        .neon-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+
+        .neon-btn:hover {
+            background-color: rgba(0, 247, 255, 0.15);
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .neon-btn:hover::before {
+            left: 100%;
+        }
+
+        .neon-btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .neon-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .neon-btn.outline {
+            background: transparent;
+            color: var(--accent-pink);
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+
+        .neon-btn.outline:hover {
+            background-color: rgba(255, 0, 255, 0.1);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .grid-line {
+            position: absolute;
+            background: rgba(0, 247, 255, 0.05);
+        }
+
+        .grid-line.horizontal {
+            width: 100%;
+            height: 1px;
+            left: 0;
+        }
+
+        .grid-line.vertical {
+            height: 100%;
+            width: 1px;
+            top: 0;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(0, 247, 255, 0.2);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 20px) rotate(90deg); }
+            50% { transform: translate(0, 40px) rotate(180deg); }
+            75% { transform: translate(-20px, 20px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: rgba(240, 248, 255, 0.6);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 247, 255, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .content-box {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .success-icon {
+                font-size: 4rem;
+            }
+            
+            .neon-btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+                min-width: 180px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+            
+            .contact-info {
+                padding: 15px;
+            }
+            
+            .contact-info p {
+                font-size: 0.95rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Tech Grid Background -->
+    <div class="tech-grid" id="techGrid"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">Kingstorm Technologies</div>
+        </div>
+
+        <div class="content-box">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h1>Message Successfully Sent!</h1>
+            
+            <p class="subtitle">
+                Thank you for reaching out to <span class="highlight">Kingstorm Technologies</span>. 
+                Your inquiry has been received and our team is already reviewing it.
+            </p>
+            
+            <p class="subtitle">
+                We strive to respond to all messages within <span class="highlight">24 hours</span>. 
+                You will receive a confirmation email shortly with your inquiry details.
+            </p>
+            
+            <div class="contact-info">
+                <h3><i class="fas fa-headset"></i> Need Immediate Assistance?</h3>
+                <p><i class="fas fa-phone"></i> <strong>Call:</strong> +(256)751998764</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> kingstormtechnologies@gmail.com</p>
+                <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Mon-Fri 8AM-6PM, Sat 9AM-2PM</p>
+            </div>
+            
+            <div class="button-group">
+                <a href="index.html#home" class="neon-btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="index.html#services" class="neon-btn outline">
+                    <i class="fas fa-code"></i> Our Services
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2026 Kingstorm Technologies. All rights reserved.</p>
+            <p>Innovative Technology Solutions for Tomorrow</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate tech grid
+        function generateTechGrid() {
+            const grid = document.getElementById('techGrid');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const cellSize = 50;
+            
+            // Clear existing grid
+            grid.innerHTML = '';
+            
+            // Generate horizontal lines
+            for (let y = 0; y < height; y += cellSize) {
+                const line = document.createElement('div');
+                line.className = 'grid-line horizontal';
+                line.style.top = `${y}px`;
+                grid.appendChild(line);
+            }
+            
+            // Generate vertical lines
+            for (let x = 0; x < width; x += cellSize) {
+                const line = document.createElement('div');
+                line.className = 'grid-line vertical';
+                line.style.left = `${x}px`;
+                grid.appendChild(line);
+            }
+        }
+        
+        // Generate floating tech elements
+        function generateFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const symbols = ['</>', '{ }', '[]', '();', '=>', '==', '!=', '&&', '||', '++', '--', '/*', '*/', '=>', '...'];
+            
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                element.style.animationDuration = `${10 + Math.random() * 20}s`;
+                container.appendChild(element);
+            }
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            generateTechGrid();
+            generateFloatingElements();
+            
+            // Regenerate grid on resize
+            window.addEventListener('resize', generateTechGrid);
+            
+            // Add click effect to buttons
+            document.querySelectorAll('.neon-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
